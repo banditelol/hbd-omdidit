@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "prep":"Yang jual enggak doyan, yang doyan enggak beli, yang beli enggak doyan?",
+        "punch":"Rumput"
+    },
+    {
+        "id":2,
+        "prep":"Ada ayam jantan, kepalanya ada di Amerika, ekornya di Afrika, sayapnya di Jakarta, matanya ada di Brazil, telurnya ada di mana..?",
+        "punch":"Ga dimana-mana"
+    },
+    {
+        "id":3,
+        "prep":"Kebo apa yang bikin orang capek?",
+        "punch":"Kebo-gor jalan kaki"
+    },
+    {
+        "id":4,
+        "prep":"Monyet apa yang nyebelin?",
+        "punch":"Monyet-elin tv kagak bisa, monyet-elin radio kagak bisa juga"
+    }
+]
