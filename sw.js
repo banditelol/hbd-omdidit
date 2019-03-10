@@ -4,7 +4,6 @@ var filesToCache = [
     '/index.html',
     '/normalize.css',
     '/style.css',
-    '/jokes.json',
     '/img/prep.png',
     '/img/punch.png'
 ];

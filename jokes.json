@@ -1,21 +1,57 @@
 [
     {
-        "id":1,
         "prep":"Yang jual enggak doyan, yang doyan enggak beli, yang beli enggak doyan?",
         "punch":"Rumput"
     },
     {
-        "id":2,
         "prep":"Ada ayam jantan, kepalanya ada di Amerika, ekornya di Afrika, sayapnya di Jakarta, matanya ada di Brazil, telurnya ada di mana..?",
         "punch":"Ga dimana-mana"
     },
     {
-        "id":3,
         "prep":"Kebo apa yang bikin orang capek?",
         "punch":"Kebo-gor jalan kaki"
     },
     {
-        "id":4,
+        "prep":"Buah semangka, dilubangin, dikasih es batu, dikocok-kocok terus digelindingin. Jadi apa?",
+        "punch":"Jadi jauh"
+    },
+    {
+        "prep":"Kenapa robin jadi pembasmi kejahatan? ",
+        "punch":"Soalnya dia ketemu sama batman..kalo ketemunya sama baskin dia bakalan buka toko eskrim"
+    },
+    {
+        "prep":"Orang bungkuk tidurnya gimana ?",
+        "punch":"Merem"
+    },
+    {
+        "prep":"Ayam apa yang bisa bertelur di gunung, di lembah, di kandang macan, pokoknya di semua sempat?",
+        "punch":"Ayam betina"
+    },
+    {
+        "prep":"Orang apa yang berenang tapi rambutnya tidak basah ?",
+        "punch":"Orang Botak"
+    },
+    {
+        "prep":"Kalau tidur berdiri, tapi kalau berdiri dia tidur?",
+        "punch":"Jempol Kaki"
+    },
+    {
+        "prep":"Mengapa turun dari kendaraan harus kaki kiri dulu?",
+        "punch":"Kalau kepala dulu namanya nyungsep"
+    },
+    {
+        "prep":"5 orang berjalan di bawah satu payung kecil tapi kenapa tidak ada satupun orang yang kehujanan ? ",
+        "punch":"Ya orang ga hujan"
+    },
+    {
+        "prep":"Apa yang menyebabkan jakarta sering KEBANJIRAN…???",
+        "punch":"Air"
+    },
+    {
+        "prep":"Kapan sebaiknya kita membuka pintu ?",
+        "punch":"Kalau ketutup"
+    },
+    {
         "prep":"Monyet apa yang nyebelin?",
         "punch":"Monyet-elin tv kagak bisa, monyet-elin radio kagak bisa juga"
     }
