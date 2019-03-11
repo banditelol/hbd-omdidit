@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
     <link rel="stylesheet" href="style.css">
     <title>Joke Onn!</title>
 </head>
+
 <body class="bg-near-white">
     <main class="bg-light-green black shadow-1">
         <h1 class="f2 helvetica b ttc" id="joke-head">Joke Onn!</h1>
@@ -19,69 +21,67 @@
         <p class="measure f5 helvetica" id="joke-content">Loading</p>
         <button type="button" id="joke-on">JOKE ON</button>
     </main>
-<script>
-    let jokeButton = document.getElementById("joke-on");
-    let jokeImage = document.getElementById("joke-image");
-    let jokeContent = document.getElementById("joke-content");
-    let punchline = false;
-    let jokeNum = 0;
-    const jokes =[];
-    const dummyContent = {
-        "id":2,
-        "prep":"Ada ayam jantan, kepalanya ada di Amerika, ekornya di Afrika, sayapnya di Jakarta, matanya ada di Brazil, telurnya ada di mana..?",
-        "punch":"Ga dimana-mana"
-    };
 
-    init();
+    <script>
+        let jokeButton = document.getElementById("joke-on");
+        let jokeImage = document.getElementById("joke-image");
+        let jokeContent = document.getElementById("joke-content");
+        let punchline = false;
+        let jokeNum = 0;
+        const jokes = [];
 
-    jokeButton.addEventListener("click",(e)=>{
-        if(!punchline){
-            givePunch();
-        } else {
-            setupPrep();
+
+        init();
+
+        jokeButton.addEventListener("click", (e) => {
+            if (!punchline) {
+                givePunch();
+            } else {
+                setupPrep();
+            }
+        })
+
+        function init() {
+            fetch("https://api.sheety.co/5e56609e-2334-49c2-a374-7fcd0aefc3bd")
+                .then(blob => blob.json())
+                .then(data => jokes.push(...data))
+                .then(() => {
+                    jokeNum = Math.floor(Math.random() * jokes.length);
+                    jokeContent.textContent = jokes[jokeNum].prep;
+                });
+            jokeButton.textContent = "JOKE ON";
+            jokeImage.src = "img/prep.png";
+            punchline = false;
+
         }
-    })
 
-    function init(){
-        fetch("https://gist.githubusercontent.com/banditelol/a8f680b60c04303522955aebfd0d35e9/raw/54a47e1194e77b423c22558337084c7e47915fd8/Dad%2520Jokes")
-        .then(blob=>blob.json())
-        .then(data=>jokes.push(...data))
-        .then(()=>{
-            jokeNum = Math.floor(Math.random()*jokes.length);
+        function setupPrep() {
+            jokeNum = Math.floor(Math.random() * jokes.length);
+            jokeButton.textContent = "JOKE ON";
             jokeContent.textContent = jokes[jokeNum].prep;
-        });
-        jokeButton.textContent = "JOKE ON";
-        jokeImage.src = "img/prep.png";
-        punchline = false;
-    
-    }
-
-    function setupPrep(){
-        jokeNum = Math.floor(Math.random()*jokes.length);
-        jokeButton.textContent = "JOKE ON";
-        jokeContent.textContent = jokes[jokeNum].prep;
-        jokeContent.classList.add("f5");
-        jokeContent.classList.remove("black","f3");
-        jokeImage.src = "img/prep.png";
-        punchline = false;
-    }
-
-    function givePunch(){
-        jokeButton.textContent = "LAGI OM";
-        jokeContent.textContent = jokes[jokeNum].punch;
-        jokeContent.classList.remove("f5");
-        jokeContent.classList.add("black","f3");
-        jokeImage.src = "img/punch.png";
-        punchline = true;
-    }
-</script>
-<script>
-        if('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-            .then(function() {
-                    console.log('Service Worker Registered');
-            });
+            jokeContent.classList.add("f5");
+            jokeContent.classList.remove("black", "f3");
+            jokeImage.src = "img/prep.png";
+            punchline = false;
         }
-</script>
+
+        function givePunch() {
+            jokeButton.textContent = "LAGI OM";
+            jokeContent.textContent = jokes[jokeNum].punch;
+            jokeContent.classList.remove("f5");
+            jokeContent.classList.add("black", "f3");
+            jokeImage.src = "img/punch.png";
+            punchline = true;
+        }
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(function () {
+                    console.log('Service Worker Registered');
+                });
+        }
+    </script>
 </body>
+
 </html>
