@@ -1,0 +1,29 @@
+{
+  "name": "hbd-omdidit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clear": "rm -rf dist & rm -rf .cache",
+    "serve": "parcel index.html",
+    "build": "parcel build index.html --public-url ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/banditelol/hbd-omdidit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/banditelol/hbd-omdidit/issues"
+  },
+  "homepage": "https://github.com/banditelol/hbd-omdidit#readme",
+  "devDependencies": {
+    "cssnano": "^4.1.10"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.0"
+  }
+}

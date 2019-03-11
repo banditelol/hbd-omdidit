@@ -2,81 +2,30 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="normalize.css">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Joke Onn!</title>
 </head>
 
 <body class="bg-near-white">
     <main class="bg-light-green black shadow-1">
         <h1 class="f2 helvetica b ttc" id="joke-head">Joke Onn!</h1>
-        <img id="joke-image" src="img/prep.png" alt="Om Didit PrepJoke">
+        <img class="joke-image" id="joke-prep" src="./img/prep.png" alt="Om Didit PrepJoke" />
+        <img class="joke-image" id="joke-punch" src="./img/punch.png" alt="Om Didit PunchJoke" hidden />
         <p class="measure f5 helvetica" id="joke-content">Loading</p>
         <button type="button" id="joke-on">JOKE ON</button>
     </main>
-
-    <script>
-        let jokeButton = document.getElementById("joke-on");
-        let jokeImage = document.getElementById("joke-image");
-        let jokeContent = document.getElementById("joke-content");
-        let punchline = false;
-        let jokeNum = 0;
-        const jokes = [];
-
-
-        init();
-
-        jokeButton.addEventListener("click", (e) => {
-            if (!punchline) {
-                givePunch();
-            } else {
-                setupPrep();
-            }
-        })
-
-        function init() {
-            fetch("https://api.sheety.co/5e56609e-2334-49c2-a374-7fcd0aefc3bd")
-                .then(blob => blob.json())
-                .then(data => jokes.push(...data))
-                .then(() => {
-                    jokeNum = Math.floor(Math.random() * jokes.length);
-                    jokeContent.textContent = jokes[jokeNum].prep;
-                });
-            jokeButton.textContent = "JOKE ON";
-            jokeImage.src = "img/prep.png";
-            punchline = false;
-
-        }
-
-        function setupPrep() {
-            jokeNum = Math.floor(Math.random() * jokes.length);
-            jokeButton.textContent = "JOKE ON";
-            jokeContent.textContent = jokes[jokeNum].prep;
-            jokeContent.classList.add("f5");
-            jokeContent.classList.remove("black", "f3");
-            jokeImage.src = "img/prep.png";
-            punchline = false;
-        }
-
-        function givePunch() {
-            jokeButton.textContent = "LAGI OM";
-            jokeContent.textContent = jokes[jokeNum].punch;
-            jokeContent.classList.remove("f5");
-            jokeContent.classList.add("black", "f3");
-            jokeImage.src = "img/punch.png";
-            punchline = true;
-        }
-    </script>
+    <script src="./index.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
+            navigator.serviceWorker.register('./sw.js')
                 .then(function () {
                     console.log('Service Worker Registered');
                 });
